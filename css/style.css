@@ -14,10 +14,13 @@
   --smallerFontSize: 12px;
   --tinyFontSize: 10px;
 
-  /** Colour Schemes for Various Areas around the website */
+  /* Colour Schemes for Various Areas around the website */
   --navBarTextColour: white;
   --navBarBackgroundColour: darkBlue;
+  
+  /* Sizing and display properties listed below*/
   --sideColumnWidth: 20%;
+  --baseDisplay: grid;
 }
 
 * {
@@ -93,7 +96,7 @@ header{
   grid-template-columns: var(--sideColumnWidth) auto auto auto var(--sideColumnWidth);
   grid-template-areas:
   "sideColumn aboutMe aboutMe aboutMeImage ."
-  "sideColumn aboutMe aboutMe aboutMeImage ."
+  "sideColumn aboutMe aboutMe aboutMeImage .";
 }
 /*Grid for project section*/
 .projectGrid{
@@ -126,18 +129,21 @@ header{
   grid-area: project4;
   background-color: crimson;
 }
-.sideColumn{
-  grid-area: sideColumn;
-}
 #aboutMe{
   grid-area: aboutMe;
 }
 #aboutMeImage{
   grid-area: aboutMeImage;
 }
+.projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .projectGridArea{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -155,7 +161,9 @@ header{
   border-color: black;
   justify-content: center;
 }
+/*Side column is given its grid area here due to being used multiple times throughout the site for the same purpose.*/
 .sideColumn{
+  grid-area: sideColumn;
   height: 100%;
   width: 100%;
   padding-right: 10%;
