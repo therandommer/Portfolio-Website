@@ -2,21 +2,24 @@
   /** Font sizes for use throughout the document */
   
   /* Header Font Sizes */
-  --heading1FontSize: 48px;
+  --heading1FontSize: 60px;
   --heading2FontSize: 32px;
   --heading3FontSize: 26px;
   --heading4FontSize: 24px;
-  --heading5FontSize: 18px;
-  --heading6FontSize: 16px;
+  --heading5FontSize: 20px;
+  --heading6FontSize: 18px;
 
   /* Main Body Font Sizes */
-  --paragraphFontSize: 14px;
+  --paragraphFontSize: 16px;
   --smallerFontSize: 12px;
   --tinyFontSize: 10px;
 
   /* Colour Schemes for Various Areas around the website */
   --navBarTextColour: white;
   --navBarBackgroundColour: darkBlue;
+  --navBarButtonTextColour: gray;
+  --navBarButtonBackgroundColour: lightBlue;
+  --navBarButtonBorderColour: black;
   
   /* Sizing and display properties listed below*/
   --sideColumnWidth: 20%;
@@ -27,8 +30,9 @@
   box-sizing: border-box;
 }
 /*!Remove this*/
-img {
-  width: 30%;
+.mainBanner img {
+  width: 100%;
+  max-height: 300px;
 }
 /**Default font styling for various elements done below*/
 
@@ -72,22 +76,45 @@ h5{
 h6{
   font-size: var(--heading6FontSize);
 }
-
-p a{
+p{
+  font-size: var(--paragraphFontSize);
+}
+a{
   font-size: var(--paragraphFontSize);
 }
 
-/*Smaller font for the contact me section*/
-.contactMe p a{
+/*Overriding the generic a tag so that they display smaller in the contact me section*/
+.contactMe a{
   font-size: var(--smallerFontSize);
 }
 /*End of default styling*/
 /**Header Styling*/
 header{
-  width:max-content;
-  padding: 50px;
+  width:100%;
+  background-color: var(--navBarBackgroundColour);
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--navBarTextColour);
+  text-decoration: none;
 }
-
+/*Styling the buttons located in the header*/
+.bannerLink{
+  color: var(--navBarButtonTextColour);
+  text-decoration: none;
+  padding: 1%;
+  font-size: var(--heading3FontSize);
+  background-color: var(--navBarButtonBackgroundColour);
+  border-radius: 30%;
+  border-color: var(--navBarButtonBorderColour);
+}
+/**Banner and main heading styling*/
+.mainBanner h2{
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
 /**Setting up each grid*/
 /*Grid for about me section*/
 .about{
@@ -161,7 +188,7 @@ header{
   border-color: black;
   justify-content: center;
 }
-/*Side column is given its grid area here due to being used multiple times throughout the site for the same purpose.*/
+/*Side column is given its grid area here due to being used multiple times throughout the site for the same purpose*/
 .sideColumn{
   grid-area: sideColumn;
   height: 100%;
