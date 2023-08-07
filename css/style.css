@@ -87,8 +87,7 @@ header{
 /**Flex Grid Section*/
 .projectGrid{
   display: flex;
-  justify-content: flex-start;
-  flex: 1;
+  justify-content: space-evenly;
   padding: 50px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -113,10 +112,14 @@ header{
 .pageSection{
   display: flex;
 }
+
+.pageColumn{
+  flex: 1;
+}
 /*Media query for mobile devices.*/
 @media only screen and (max-width: 600px)
 {
-  .flexGrid{
+  .projectGrid{
     display:block;
   }
 }
