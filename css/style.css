@@ -85,40 +85,55 @@ header{
   padding: 50px;
 }
 
-/**Flex Grid Section*/
+/**Setting up each grid*/
+/*Grid for about me section*/
+.about{
+  display:grid;
+  width:auto;
+  grid-template-columns: var(--sideColumnWidth) auto auto auto var(--sideColumnWidth);
+  grid-template-areas:
+  "sideColumn aboutMe aboutMe aboutMeImage ."
+  "sideColumn aboutMe aboutMe aboutMeImage ."
+}
+/*Grid for project section*/
 .projectGrid{
   display: grid;
   width: auto;
   grid-template-columns: var(--sideColumnWidth) auto auto var(--sideColumnWidth);
-  grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas: 
   "sideColumn projectHighlight projectHighlight ."
   "sideColumn project1 project2 ."
   "sideColumn project3 project4 .";
 }
-/*Assigning each child id to the relevant grid area to help them display correctly.*/
-.projectGrid > #projectHighlight{
+/*Assigning each class/id to their respective grid areas.*/
+#projectHighlight{
   grid-area: projectHighlight;
   background-color: aqua;
 }
-.projectGrid > #project1{
+#project1{
   grid-area: project1;
   background-color: bisque;
 }
-.projectGrid > #project2{
+#project2{
   grid-area: project2;
   background-color: blueviolet;
 }
-.projectGrid > #project3{
+#project3{
   grid-area: project3;
   background-color: chartreuse;
 }
-.projectGrid > #project4{
+#project4{
   grid-area: project4;
   background-color: crimson;
 }
-.projectGrid > .sideColumn{
+.sideColumn{
   grid-area: sideColumn;
+}
+#aboutMe{
+  grid-area: aboutMe;
+}
+#aboutMeImage{
+  grid-area: aboutMeImage;
 }
 .projectGridArea{
   display: flex;
@@ -129,7 +144,6 @@ header{
 .projectGrid a{
   text-align: center;
 }
-
 .projectGrid iframe{
   border-radius: 10%;
   border-color: greenyellow;
@@ -142,9 +156,9 @@ header{
   justify-content: center;
 }
 .sideColumn{
-  display: flex;
   height: 100%;
-  width: var(--sideColumnWidth);
+  width: 100%;
+  padding-right: 10%;
   text-align: right;
   border-right-style: dotted;
   border-right-color:blue;
