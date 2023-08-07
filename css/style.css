@@ -17,6 +17,7 @@
   /** Colour Schemes for Various Areas around the website */
   --navBarTextColour: white;
   --navBarBackgroundColour: darkBlue;
+  --sideColumnWidth: 20%;
 }
 
 * {
@@ -86,15 +87,46 @@ header{
 
 /**Flex Grid Section*/
 .projectGrid{
-  display: flex;
-  justify-content: space-evenly;
-  padding: 50px;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  width: auto;
+  grid-template-columns: var(--sideColumnWidth) auto auto var(--sideColumnWidth);
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas: 
+  "sideColumn projectHighlight projectHighlight ."
+  "sideColumn project1 project2 ."
+  "sideColumn project3 project4 .";
 }
-
+/*Assigning each child id to the relevant grid area to help them display correctly.*/
+.projectGrid > #projectHighlight{
+  grid-area: projectHighlight;
+  background-color: aqua;
+}
+.projectGrid > #project1{
+  grid-area: project1;
+  background-color: bisque;
+}
+.projectGrid > #project2{
+  grid-area: project2;
+  background-color: blueviolet;
+}
+.projectGrid > #project3{
+  grid-area: project3;
+  background-color: chartreuse;
+}
+.projectGrid > #project4{
+  grid-area: project4;
+  background-color: crimson;
+}
+.projectGrid > .sideColumn{
+  grid-area: sideColumn;
+}
+.projectGridArea{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .projectGrid a{
-  text-decoration: black;
   text-align: center;
 }
 
@@ -109,13 +141,15 @@ header{
   border-color: black;
   justify-content: center;
 }
-.pageSection{
+.sideColumn{
   display: flex;
+  height: 100%;
+  width: var(--sideColumnWidth);
+  text-align: right;
+  border-right-style: dotted;
+  border-right-color:blue;
 }
 
-.pageColumn{
-  flex: 1;
-}
 /*Media query for mobile devices.*/
 @media only screen and (max-width: 600px)
 {
