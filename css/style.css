@@ -1,4 +1,20 @@
 :root{
+  /** Font sizes for use throughout the document */
+  
+  /* Header Font Sizes */
+  --heading1FontSize: 48px;
+  --heading2FontSize: 32px;
+  --heading3FontSize: 26px;
+  --heading4FontSize: 24px;
+  --heading5FontSize: 18px;
+  --heading6FontSize: 16px;
+
+  /* Main Body Font Sizes */
+  --paragraphFontSize: 14px;
+  --smallerFontSize: 12px;
+  --tinyFontSize: 10px;
+
+  /** Colour Schemes for Various Areas around the website */
   --navBarTextColour: white;
   --navBarBackgroundColour: darkBlue;
 }
@@ -6,17 +22,11 @@
 * {
   box-sizing: border-box;
 }
-
-.flexGrid{
-  display: flex;
-  width: 1fr;
-  justify-content: space-evenly;
-}
 /*!Remove this*/
 img {
   width: 30%;
-  
 }
+/**Default font styling for various elements done below*/
 
 body {
   display: var(--baseDisplay);
@@ -35,10 +45,74 @@ h6 {
   margin: 0;
 }
 
-p {
-  margin: 0;
+h1{
+  font-size: var(--heading1FontSize);
 }
 
+h2{
+  font-size: var(--heading2FontSize);
+}
+
+h3{
+  font-size: var(--heading3FontSize);
+}
+
+h4{
+  font-size: var(--heading4FontSize);
+}
+
+h5{
+  font-size: var(--heading5FontSize);
+}
+
+h6{
+  font-size: var(--heading6FontSize);
+}
+
+p a{
+  font-size: var(--paragraphFontSize);
+}
+
+/*Smaller font for the contact me section*/
+.contactMe p a{
+  font-size: var(--smallerFontSize);
+}
+/*End of default styling*/
+/**Header Styling*/
+header{
+  width:max-content;
+  padding: 50px;
+}
+
+/**Flex Grid Section*/
+.projectGrid{
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  padding: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.projectGrid a{
+  text-decoration: black;
+  text-align: center;
+}
+
+.projectGrid iframe{
+  border-radius: 10%;
+  border-color: greenyellow;
+}
+
+.projectGrid img {
+  border-radius: 10%;
+  border-width: 20px;
+  border-color: black;
+  justify-content: center;
+}
+.pageSection{
+  display: flex;
+}
 /*Media query for mobile devices.*/
 @media only screen and (max-width: 600px)
 {

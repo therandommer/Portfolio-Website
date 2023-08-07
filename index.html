@@ -14,11 +14,11 @@
 <body>
   <!-- main logo / nav -->
   <header>
-    <h1>Lernantino</h1>
+    <h1>Isabella Clark</h1>
     <nav>
-      <a class="BannerLink" href="">About Me</a>
-      <a class="BannerLink" href="">My Projects</a>
-      <a class="BannerLink" href="">Contact Me</a>
+      <a class="BannerLink" href="#about">About Me</a>
+      <a class="BannerLink" href="#projects">My Projects</a>
+      <a class="BannerLink" href="#contactMe">Contact Me</a>
     </nav>
   </header>
 
@@ -32,52 +32,57 @@
   <!-- Main body in a flex grid.-->
   <main class="mainContent">
     <!-- about me -->
-    <section class="page-section" id="about">
+    <section class="pageSection" id="about">
       <h2>About Me</h2>
       <p>Some stuff about me :)</p>
       <img src="" alt="Image to do with me">
     </section>
 
     <!-- portfolio container -->
-    <section class="page-section flexGrid" id="work">
+    <section class="pageSection flexGrid" id="projects">
       <h2>Projects</h2>
       <!--List of projects displayed here-->
+      <!--First couple of projects contain links to unlisted Youtube videos I made years ago for other projects.-->
       <ul>
-        <li><a href="">Highlight Project</a></li>
+        <li id="projectHighlight"><a href="https://github.com/therandommer/Final-FYP">Bullets in Space!</a>
         <p>Highlight Project Brief</p>
-        <img src="" alt="Highlight Project Image">
-        <li><a href="">Project 1 (TBD)</a></li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MdyeCq9s04k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       </li>
+
+        <li id="project1"><a href="">AI Pathfinding</a>
         <p>Project 1 Brief</p>
-        <img src="/images/02-portfolio-1.jpg" alt="Project 1 Pic">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KpgSKDBXYlU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </li>
       </ul>
       <ul>
-        <li><a href="">Project 2 (TBD)</a></li>
+        <li id="project2"><a href="">Project 2 (TBD)</a>
         <p>Project 2 Brief</p>
-        <img src="/images/02-portfolio-2.jpg" alt="Project 2 Pic">
+        <img src="/images/02-portfolio-2.jpg" alt="Project 2 Pic"></li>
       </ul>
       <ul>
-        <li><a href="">Project 3 (TBD)</a></li>
+        <li id="project3"><a href="">Project 3 (TBD)</a>
         <p>Project 3 Brief</p>
-        <img src="/images/02-portfolio-3.jpg" alt="Project 3 Pic">
+        <img src="/images/02-portfolio-3.jpg" alt="Project 3 Pic"></li>
       </ul>
       <ul>
-        <li><a href="">Project 4 (TBD)</a></li>
+        <li id="project4"><a href="">Project 4 (TBD)</a>
         <p>Project 4 Brief</p>
-        <img src="/images/02-portfolio-4.jpg" alt="Project 4 Pic">
+        <img src="/images/02-portfolio-4.jpg" alt="Project 4 Pic">></li>
       </ul>
     </section>
 
-    <!-- contact -->
-    <section class="page-section contact" id="contact">
-      <h2>Contact Me</h2>
-      <img src="" alt="Phone Icon">
-      <!-- Can add whatever phone number here -->
-      <a href="tel:+4475353333333">Phone me!</a>
-      <img src="" alt="Email Icon">
-      <!-- Will mail selected email address -->
-      <a href="mailto:nerfbriggitte101@gmaill.com">Email me!</a>
-    </section>
-  </main>
+    <!-- contact footer -->
+    <footer>
+      <section class="pageSection contact" id="contactMe">
+        <h2>Contact Me</h2>
+        <!-- Can add whatever phone number here -->
+        <a href="tel:+4475353333333"> 📞 Phone me!</a>
+        <!-- Will mail selected email address -->
+        <a href="mailto:nerfbriggitte101@gmaill.com">📧 Email me!</a>
+      </section>
+    </main>
+    </footer>
+    
 </body>
 
 </html>
