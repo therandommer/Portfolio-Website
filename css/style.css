@@ -21,6 +21,7 @@
   --navBarButtonHighlightColour: black;
   --navBarButtonBackgroundColour: lightBlue;
   --navBarButtonBorderColour: black;
+  --backgroundTextColour: rgba(192,192,192,0.8);
   
   /* Sizing and display properties listed below*/
   --sideColumnWidth: 15%;
@@ -64,8 +65,23 @@ h5{
 h6{
   font-size: var(--heading6FontSize);
 }
+/*Default styling to create the background box and center all paragraphs and h3 elements located within the projects box*/
 p{
   font-size: var(--paragraphFontSize);
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
+  background-color: var(--backgroundTextColour);
+  border: 5px solid cadetblue;
+}
+/*using h4 elements in most of the grids to help with the styling requirements. Sizing them to h3 so that they have the same size as the other h3 elements.*/
+.projectGridStyling h4{
+  font-size: var(--heading3FontSize);
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
+  background-color: var(--backgroundTextColour);
+  border: 5px solid cadetblue;
 }
 a{
   font-size: var(--paragraphFontSize);
@@ -117,7 +133,7 @@ header, footer{
 }
 /*Inline background highlight while keeping formatting using span*/
 .mainBanner h2 span{
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 /*Footer text styling*/
 .contact h2{
@@ -141,6 +157,7 @@ header, footer{
 }
 .about img{
   max-width: 100%;
+  height: 100%;
 }
 /*Grid for project section*/
 .projectGrid{
@@ -161,31 +178,33 @@ header, footer{
   align-items: center;
   padding: 5%;
 }
-/*Due to project highlight occupying more space, sets the flex direction to row to better utilise the space.*/
+/*Setting individual rules per project based on the content displayed within.*/
 #projectHighlight{
   grid-area: projectHighlight;
-  background-color: aqua;
   flex-direction: row;
+}
+#projectHighlight h3{
+  flex-direction: column;
+  position: absolute;
+  top: 60%;
+}
+#projectHighlight p{
+  width:60%;
 }
 #project1{
   grid-area: project1;
-  background-color: bisque;
 }
 #project2{
   grid-area: project2;
-  background-color: blueviolet;
 }
 #project3{
   grid-area: project3;
-  background-color: chartreuse;
 }
 #project4{
   grid-area: project4;
-  background-color: crimson;
 }
 #aboutMe{
   grid-area: aboutMe;
-  background-color: cadetblue;
 }
 #aboutMeImage{
   grid-area: aboutMeImage;
@@ -212,6 +231,11 @@ header, footer{
 .projectGrid img:hover{
   opacity: 1;
 }
+/*pointer-events: none creates consistent highlight behaviours.*/
+.projectGridStyling h4{
+  position: absolute;
+  pointer-events: none;
+}
 /*Side column is given its grid area here due to being used multiple times throughout the site for the same purpose*/
 .sideColumn{
   grid-area: sideColumn;
@@ -219,10 +243,11 @@ header, footer{
   width: 100%;
   padding-right: 10%;
   text-align: right;
+  background-color: lightblue;
   border-right-style: dotted;
   border-right-color:blue;
 }
-/*Media query for mobile devices.*/
+/*Media query for mobile and tablet devices.*/
 @media only screen and (max-width: 768px)
 {
   .projectGrid{
@@ -230,5 +255,13 @@ header, footer{
   }
   .projectGridStyling{
     padding:10px;
+  }
+  #projectHighlight h3{
+    position:relative;
+    height: auto;
+    text-align: right;
+  }
+  .projectGrid .sideColumn{
+    text-align: center;
   }
 }
