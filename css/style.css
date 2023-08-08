@@ -135,16 +135,18 @@ header, footer{
 .about{
   display:grid;
   width:auto;
-  grid-template-columns: var(--sideColumnWidth) auto auto auto;
+  grid-template-columns: var(--sideColumnWidth) 1fr var(--sideColumnWidth);
   grid-template-areas:
-  "sideColumn aboutMe aboutMe aboutMeImage"
-  "sideColumn aboutMe aboutMe aboutMeImage";
+  "sideColumn aboutMe aboutMeImage"
+}
+.about img{
+  max-width: 100%;
 }
 /*Grid for project section*/
 .projectGrid{
   display: grid;
   width: 100%;
-  grid-template-columns: var(--sideColumnWidth) auto auto;
+  grid-template-columns: var(--sideColumnWidth) 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: 
   "sideColumn projectHighlight projectHighlight"
