@@ -28,11 +28,7 @@
 * {
   box-sizing: border-box;
 }
-/*!Remove this*/
-.mainBanner img {
-  width: 100%;
-  max-height: 300px;
-}
+
 /**Default font styling for various elements done below*/
 body {
   display: var(--baseDisplay);
@@ -93,17 +89,30 @@ header, footer{
 .bannerLink{
   color: var(--navBarButtonTextColour);
   text-decoration: none;
-  padding: 1%;
+  padding: 1% 3%;
+  margin: 1% 5%;
   font-size: var(--heading3FontSize);
   background-color: var(--navBarButtonBackgroundColour);
-  border-radius: 30%;
+  border-radius: 50%;
   border-color: var(--navBarButtonBorderColour);
 }
 /**Banner and main heading styling*/
+.mainBanner{
+  background-image: url("/images/02-hero-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
 .mainBanner h2{
   text-align: center;
+  color: black;
   padding-top: 1%;
   padding-bottom: 1%;
+}
+/*Inline background highlight while keeping formatting using span*/
+.mainBanner h2 span{
+  background-color: aqua;
 }
 /*Footer text styling*/
 .contact h2{
@@ -114,28 +123,28 @@ header, footer{
 .contact a{
   color: var(--navBarTextColour);
   text-align: center;
-  padding: 1%;
+  padding: 3%;
 }
 /**Setting up each grid*/
 /*Grid for about me section*/
 .about{
   display:grid;
   width:auto;
-  grid-template-columns: var(--sideColumnWidth) auto auto auto var(--sideColumnWidth);
+  grid-template-columns: var(--sideColumnWidth) auto auto auto;
   grid-template-areas:
-  "sideColumn aboutMe aboutMe aboutMeImage ."
-  "sideColumn aboutMe aboutMe aboutMeImage .";
+  "sideColumn aboutMe aboutMe aboutMeImage"
+  "sideColumn aboutMe aboutMe aboutMeImage";
 }
 /*Grid for project section*/
 .projectGrid{
   display: grid;
   width: auto;
-  grid-template-columns: var(--sideColumnWidth) auto auto var(--sideColumnWidth);
+  grid-template-columns: var(--sideColumnWidth) auto auto;
   grid-template-rows: auto;
   grid-template-areas: 
-  "sideColumn projectHighlight projectHighlight ."
-  "sideColumn project1 project2 ."
-  "sideColumn project3 project4 .";
+  "sideColumn projectHighlight projectHighlight"
+  "sideColumn project1 project2"
+  "sideColumn project3 project4";
 }
 /*Assigning each class/id to their respective grid areas.*/
 #projectHighlight{
@@ -168,18 +177,18 @@ header, footer{
 }
 .projects{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .projectGrid a{
   text-align: center;
 }
-.projectGrid img {
-  border-radius: 10%;
-  border-width: 20px;
-  border-color: black;
+.projectGrid img{
+  border: 10px solid black;
   justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
 }
 /*Side column is given its grid area here due to being used multiple times throughout the site for the same purpose*/
 .sideColumn{
