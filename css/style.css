@@ -16,7 +16,7 @@
 
   /* Colour Schemes for Various Areas around the website */
   --navBarTextColour: white;
-  --navBarBackgroundColour: darkBlue;
+  --navBarBackgroundColour: blueviolet;
   --navBarButtonTextColour: gray;
   --navBarButtonBackgroundColour: lightBlue;
   --navBarButtonBorderColour: black;
@@ -25,7 +25,6 @@
   --sideColumnWidth: 20%;
   --baseDisplay: grid;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -35,7 +34,6 @@
   max-height: 300px;
 }
 /**Default font styling for various elements done below*/
-
 body {
   display: var(--baseDisplay);
   margin: 0;
@@ -43,7 +41,6 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
 }
-
 h1,
 h2,
 h3,
@@ -52,27 +49,21 @@ h5,
 h6 {
   margin: 0;
 }
-
 h1{
   font-size: var(--heading1FontSize);
 }
-
 h2{
   font-size: var(--heading2FontSize);
 }
-
 h3{
   font-size: var(--heading3FontSize);
 }
-
 h4{
   font-size: var(--heading4FontSize);
 }
-
 h5{
   font-size: var(--heading5FontSize);
 }
-
 h6{
   font-size: var(--heading6FontSize);
 }
@@ -82,14 +73,13 @@ p{
 a{
   font-size: var(--paragraphFontSize);
 }
-
 /*Overriding the generic a tag so that they display smaller in the contact me section*/
 .contactMe a{
   font-size: var(--smallerFontSize);
 }
 /*End of default styling*/
-/**Header Styling*/
-header{
+/**Header and footer styling*/
+header, footer{
   width:100%;
   background-color: var(--navBarBackgroundColour);
   padding: 1%;
@@ -115,6 +105,17 @@ header{
   padding-top: 1%;
   padding-bottom: 1%;
 }
+/*Footer text styling*/
+.contact h2{
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.contact a{
+  color: var(--navBarTextColour);
+  text-align: center;
+  padding: 1%;
+}
 /**Setting up each grid*/
 /*Grid for about me section*/
 .about{
@@ -130,6 +131,7 @@ header{
   display: grid;
   width: auto;
   grid-template-columns: var(--sideColumnWidth) auto auto var(--sideColumnWidth);
+  grid-template-rows: auto;
   grid-template-areas: 
   "sideColumn projectHighlight projectHighlight ."
   "sideColumn project1 project2 ."
@@ -158,30 +160,21 @@ header{
 }
 #aboutMe{
   grid-area: aboutMe;
+  background-color: cadetblue;
 }
 #aboutMeImage{
   grid-area: aboutMeImage;
+  background-color: darkslateblue;
 }
 .projects{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.projectGridArea{
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 .projectGrid a{
   text-align: center;
 }
-.projectGrid iframe{
-  border-radius: 10%;
-  border-color: greenyellow;
-}
-
 .projectGrid img {
   border-radius: 10%;
   border-width: 20px;
@@ -198,7 +191,6 @@ header{
   border-right-style: dotted;
   border-right-color:blue;
 }
-
 /*Media query for mobile devices.*/
 @media only screen and (max-width: 600px)
 {
