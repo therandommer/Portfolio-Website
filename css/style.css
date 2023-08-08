@@ -18,11 +18,12 @@
   --navBarTextColour: white;
   --navBarBackgroundColour: blueviolet;
   --navBarButtonTextColour: gray;
+  --navBarButtonHighlightColour: black;
   --navBarButtonBackgroundColour: lightBlue;
   --navBarButtonBorderColour: black;
   
   /* Sizing and display properties listed below*/
-  --sideColumnWidth: 20%;
+  --sideColumnWidth: 15%;
   --baseDisplay: grid;
 }
 * {
@@ -93,8 +94,12 @@ header, footer{
   margin: 1% 5%;
   font-size: var(--heading3FontSize);
   background-color: var(--navBarButtonBackgroundColour);
+  /*Border radius to curve the buttons*/
   border-radius: 50%;
   border-color: var(--navBarButtonBorderColour);
+}
+.bannerLink a:hover{
+  color: var(--navBarButtonTextColour);
 }
 /**Banner and main heading styling*/
 .mainBanner{
@@ -138,7 +143,7 @@ header, footer{
 /*Grid for project section*/
 .projectGrid{
   display: grid;
-  width: auto;
+  width: 100%;
   grid-template-columns: var(--sideColumnWidth) auto auto;
   grid-template-rows: auto;
   grid-template-areas: 
@@ -146,10 +151,19 @@ header, footer{
   "sideColumn project1 project2"
   "sideColumn project3 project4";
 }
-/*Assigning each class/id to their respective grid areas.*/
+/*Assigning each class/id to their respective grid areas and giving proper styling.*/
+.projectGridStyling{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+/*Due to project highlight occupying more space, sets the flex direction to row to better utilise the space.*/
 #projectHighlight{
   grid-area: projectHighlight;
   background-color: aqua;
+  flex-direction: row;
 }
 #project1{
   grid-area: project1;
@@ -183,12 +197,18 @@ header, footer{
 }
 .projectGrid a{
   text-align: center;
+  display:none;
 }
 .projectGrid img{
   border: 10px solid black;
   justify-content: center;
+  align-self: center;
   cursor: pointer;
   opacity: 0.5;
+}
+/*Highlights image on hover*/
+.projectGrid img:hover{
+  opacity: 1;
 }
 /*Side column is given its grid area here due to being used multiple times throughout the site for the same purpose*/
 .sideColumn{
@@ -201,9 +221,12 @@ header, footer{
   border-right-color:blue;
 }
 /*Media query for mobile devices.*/
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 768px)
 {
   .projectGrid{
     display:block;
+  }
+  .projectGridStyling{
+    padding:10px;
   }
 }
